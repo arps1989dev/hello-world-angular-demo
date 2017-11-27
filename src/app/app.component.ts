@@ -16,7 +16,12 @@ export class AppComponent {
   viewMode = 'something';
 
   courses;
+  canSave = true;
 
+  task = {
+    title: 'Review Application',
+    assignee: null
+  }
   onFavoriteChange(eventArgs: FavoriteChangeEventArgs) {
     console.log("Favorite changed.", eventArgs)
   }

@@ -1,11 +1,21 @@
+
+
+
 <h1>Angular</h1>
+<contact-form></contact-form>
 <courses></courses>
+<br/>
+
 <!-- <favorite [isFavorite]="post.isFavorite" (change)="onFavoriteChange()" ></favorite> -->
 
 <div>isFavorite: {{isFavorite}}</div>
 <i class="glyphicon"
 [class.glyphicon-star-empty]="!isSelected"
 [class.glyphicon-star]="isSelected"
+[ngClass]="{
+  'glyphicon-star': isSelected,
+  'glyphicon-star-empty': !isSelected
+}"
 (change)="onFavoriteChange($event)">
 </i>
 
@@ -34,3 +44,20 @@
     <button (click)="onChange(course)" > Remove </button>
   </li>
 </ul>
+
+<button 
+  [style.backgroundColor]="canSave ? 'blue' : 'gray' "
+  [style.color]=" canSave ? 'white' : 'black' "
+  [style.fontWeight]="canSave ? 'bold' : 'normal' "
+  [ngStyle]="{
+    'backgroungColor': canSave ? 'blue' : 'gray',
+    'color': canSave ? 'white' : 'black'
+  }"
+>
+  Save
+</button> <br/> <br/>
+<span> {{ task.assignee?.name }} </span> <br/>
+
+<input type="text" [appInputFormat]="'uppercase'" >
+
+<signup-form></signup-form>
